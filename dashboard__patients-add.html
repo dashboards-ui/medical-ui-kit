@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from smarttemplates.net/medikit/dashboard__patients-add.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2019 00:52:40 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1" />
+<meta name="author" content="SmartTemplates" />
+<meta name="description" content="medikit admin dashboard" />
+<meta name="keywords" content="medical dashboard, HTML UI KIT, medikit" />
+<title>Medikit</title>
+<link rel="stylesheet" href="css/daterangepicker.css">
+<link rel="stylesheet" href="css/select2.css">
+<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+<link rel="stylesheet" href="css/dashboard.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
+</head>
+<body>
+
+<div class="dashboard-wrap">
+
+	<header class="sidebar-header">
+		<h1 class="sidebar-header__logo">m<span>edi<strong>kit</strong></span></h1>
+	</header>
+	
+	<!-- Section sidebar -->
+	<div class="section section--sidebar" id="sidebar">
+	
+			<nav class="sidebar-menu"> 
+				<ul>
+					<li class="dashboard"><a href="dashboard.html"><b>Dashboard</b></a></li>
+					<li class="components has-submenu"><a href="#"><b>Components<span class="submenu-arrow"></span></b></a>
+						<ul class="sidebar-menu__submenu">
+							<li><a href="dashboard__grid.html">Grid</a></li>
+							<li><a href="dashboard__charts.html">Charts</a></li>
+							<li><a href="dashboard__forms.html">Forms</a></li>
+							<li><a href="dashboard__tabs.html">Tabs</a></li>
+							<li><a href="dashboard__toggles.html">Toggles</a></li>
+							<li><a href="dashboard__tables.html">Tables</a></li>
+							<li><a href="dashboard__typography.html">Typography</a></li>
+						</ul>
+					</li>
+					<li class="appointment"><a href="dashboard__appointments.html"><b>Appointments</b></a></li>
+					<li class="doctors has-submenu"><a href="#"><b>Doctors<span class="submenu-arrow"></span></b></a>
+						<ul class="sidebar-menu__submenu">
+							<li><a href="dashboard__doctors-add.html">Add new doctor</a></li>
+							<li><a href="dashboard__doctors.html">View all doctors</a></li>
+						</ul>
+					</li>
+					<li class="patients has-submenu"><a href="#"><b>Patients<span class="submenu-arrow"></span></b></a>
+						<ul class="sidebar-menu__submenu">
+							<li><a href="dashboard__patients-add.html">Add new patient</a></li>
+							<li><a href="dashboard__patients.html">View all patients</a></li>
+							<li><a href="dashboard__patient.html">Patient profile</a></li>
+						</ul>
+					</li>		
+					<li class="inbox"><a href="dashboard__messages.html"><b>Messages<span class="submenu-bubble">3</span></b></a></li>
+					<li class="settings"><a href="#"><b>Settings</b></a></li>
+				</ul>
+			</nav>
+	
+	</div>
+	
+	<!-- Section sidebar -->
+	<div class="section section--content" id="content">
+		<header class="content-header">
+		
+			<div class="sidebar-resize"></div>
+			<div class="mobile-menu"><div class="st-burger-icon st-burger-icon--medium"><span></span></div></div>
+			
+			<div class="content-header__user content-header__dropdown">  
+			    <div class="content-header__user-avatar content-header__dropdown-activate" data-dropdown="userdropdown">
+					<div class="content-header__user-thumb"><img src="images/avatar-2.jpg" alt="" title=""/></div>
+					<span class="content-header__user-name">Nathalie Roberts</span>
+			    </div>  
+				<nav class="dropdown-menu dropdown-menu--header dropdown-menu--user-menu " id="userdropdown"> 	
+				<h3 class="dropdown-menu__subtitle">User menu</h3>
+				<ul>   
+				    <li><a href="#">My profile</a></li>
+				    <li><a href="#">Activity</a></li>
+				    <li><a href="#">Switch account</a></li>
+				    <li><a href="#">Support</a></li>
+				    <li class="logout"><a href="#" class="button button--general button--red-border">Logout</a></li>
+				</ul>
+				</nav>
+			</div>
+			
+			<div class="content-header__notifications content-header__dropdown">  
+			    <div class="content-header__notifications-icon content-header__icon content-header__dropdown-activate" data-dropdown="notificationsdropdown">
+					<img src="images/icons/icons-24-gray/notifications.png" alt="" title=""/>
+					<span class="content-header__icon-bubble">6</span>
+				</div>  
+				<nav class="dropdown-menu dropdown-menu--header dropdown-menu--notifications-menu" id="notificationsdropdown"> 			
+				<h3 class="dropdown-menu__subtitle">You have <strong>6</strong> notifications</h3>
+				<ul>    
+					<li class="d-flex justify-sb"><span class="important">IMPORTANT</span>Michael D. kidney surgery <b class="task-time">today</b></li>
+					<li class="d-flex justify-sb"><span class="important">IMPORTANT</span>FLU Alert report generated <b class="task-time">today</b></li>
+					
+					<li class="d-flex justify-sb"><span>Meeting with <strong>Dr. Joshua</strong> </span> <b class="task-time">tomorrow</b></li>
+					<li class="d-flex justify-sb"><span>Remember to create prescriptions for <strong>Alexander P.</strong></span> <b class="task-time">tomorrow</b></li>
+					<li class="d-flex justify-sb"><span><strong>Jada Sacks</strong> canceled the appointment at Cardiology, Dr. Michael V. </span> <b class="task-time">24 jan, 19</b></li>
+					<li class="d-flex justify-sb"><span>Sarah D. registered as new patient of <strong>Dr. George</strong> at Dermatology </span> <b class="task-time">28 jan, 19</b></li>
+					<li class="view-all"><a href="#" class="button button--general button--blue-border">View all</a></li>
+				</ul>
+				</nav>
+			</div>
+			
+			<div class="content-header__quicklinks content-header__dropdown">  
+			        <div class="content-header__quicklinks-icon content-header__icon content-header__dropdown-activate" data-dropdown="quicklinksdropdown">
+					<img src="images/icons/icons-24-gray/submenu.png" alt="" title=""/>
+				</div>  
+				<nav class="dropdown-menu dropdown-menu--header dropdown-menu--quicklinks-menu" id="quicklinksdropdown"> 	
+				<h3 class="dropdown-menu__subtitle">Quick links</h3>				
+				<ul>
+				        <li><a href="#">Add new doctor</a></li>
+					<li><a href="#">Add new patient</a></li>
+					<li><a href="#">Generate reports</a></li>
+				</ul>
+				</nav>
+			</div>
+			
+			<div class="mobile-submenu"></div>
+
+			<nav class="content-header__menu">       
+				<ul>
+					<li class="user selected"><a href="dashboard__patients-add.html">Add new patient</a></li>
+					<li class="prescription modal-toggle" data-openpopup="prescription"><a href="#">Write a prescription</a></li>
+					<li class="reports modal-toggle" data-openpopup="reports"><a href="#">Generate report</a></li>
+				</ul>
+			</nav>
+			
+		</header>
+		<div class="content-subheader">
+		
+			<div class="content-subheader__titles">
+					<h2 class="content-subheader__title">Add new patient</h2>
+					<nav class="content-subheader__breadcrumb-menu">			
+							<ul>
+								<li><a href="dashboard__patients.html">Patients</a></li>
+								<li><a href="dashboard.html">Dashboard</a></li>
+							</ul>
+					</nav>
+			</div>
+			
+			
+			<div class="content-subheader__options">
+			
+					<div class="content-subheader__search">
+						<form>
+							<input type="text" class="subheader-search__input" id="" name="" value="" placeholder="Search patient" />
+							<input type="submit" class="subheader-search__submit" value="Search" />
+						</form>
+					</div>
+					
+					<div class="content-subheader__dropdown">
+						<span class="content-subheader__more show-more show-more--select show-more--select-gray has-dropdown" data-dropdown="moreoptions">Filter Options</span>
+						<nav class="dropdown-menu dropdown-menu--content dropdown-menu--subheader" id="moreoptions"> 			
+							<ul>
+								<li><a href="#">By Date</a></li>
+								<li><a href="#">By Name</a></li>
+								<li><a href="#">By Date of birth</a></li>
+								<li><a href="#">+ Add filter</a></li>
+							</ul>
+						</nav>
+					</div>
+			
+			</div>
+			
+		</div>
+		
+
+		
+		<div class="grid grid--margin bg-white">	
+			<div class="grid__row">
+				<div class="grid__col grid__col--padding">
+					<h3 class="grid__col-title">Personal Information</h3>
+			
+				</div>		
+			</div>	
+			<form>
+			<div class="grid__row grid__row--margin">
+				
+				<div class="grid__col grid__col--13 grid__col--margin">
+					<div class="form-upload" id="dropzone">
+						<div class="form-upload__message dz-message needsclick">
+						Drop image here or click to upload.
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid__col grid__col--13 grid__col--margin">
+					<div class="grid__row">  
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">FIRST NAME *</label>
+							<input name="fname" id="fname" class="form__input required" type="text" />	
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">EMAIL *</label>
+							<input name="email" id="email" class="form__input required email" type="text" />	
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">GENDER</label>
+							<div class="form__select">
+								<select name="gender" id="gender">
+								<option>Choose a gender</option>
+								<option value="1">Female</option>
+								<option value="2">Male</option>
+								</select>
+							</div>		
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin mb0">
+							<label class="form__label">LANGUAGES</label>
+							<select class="custom-select" name="languages" multiple="multiple">
+								<option value="English">English</option>
+								<option value="French">French</option>
+								<option value="German">German</option>
+								<option value="Mandarin">Mandarin</option>
+								<option value="Spanish">Spanish</option>
+								<option value="Italian">Italian</option>
+							</select>		
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid__col grid__col--13 grid__col--margin">
+					<div class="grid__row">  
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">LAST NAME *</label>
+							<input name="lname" id="lname" class="form__input required" type="text" />
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">PHONE *</label>
+							<input name="phone" id="phone" class="form__input required" type="text" />
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">DATE OF BIRTH</label>
+							<input type="text" name="birthday" class="form__input" value="02/03/1983" />
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin mb0">
+							<label class="form__label">NATIONALITY</label>
+							<select class="custom-select" name="nationality">
+								<option value="United States">United States</option>
+								<option value="United Kingdom">United Kingdom</option>
+								<option value="Afghanistan">Afghanistan</option>
+								<option value="Albania">Albania</option>
+								<option value="Algeria">Algeria</option>
+								<option value="American Samoa">American Samoa</option>
+								<option value="Andorra">Andorra</option>
+								<option value="Angola">Angola</option>
+								<option value="Anguilla">Anguilla</option>
+								<option value="Antarctica">Antarctica</option>
+								<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+								<option value="Argentina">Argentina</option>
+								<option value="Armenia">Armenia</option>
+								<option value="Aruba">Aruba</option>
+								<option value="Australia">Australia</option>
+								<option value="Austria">Austria</option>
+								<option value="Azerbaijan">Azerbaijan</option>
+								<option value="Bahamas">Bahamas</option>
+								<option value="Bahrain">Bahrain</option>
+								<option value="Bangladesh">Bangladesh</option>
+								<option value="Barbados">Barbados</option>
+								<option value="Belarus">Belarus</option>
+								<option value="Belgium">Belgium</option>
+								<option value="Belize">Belize</option>
+								<option value="Benin">Benin</option>
+								<option value="Bermuda">Bermuda</option>
+								<option value="Bhutan">Bhutan</option>
+								<option value="Bolivia">Bolivia</option>
+								<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+								<option value="Botswana">Botswana</option>
+								<option value="Bouvet Island">Bouvet Island</option>
+								<option value="Brazil">Brazil</option>
+								<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+								<option value="Brunei Darussalam">Brunei Darussalam</option>
+								<option value="Bulgaria">Bulgaria</option>
+								<option value="Burkina Faso">Burkina Faso</option>
+								<option value="Burundi">Burundi</option>
+								<option value="Cambodia">Cambodia</option>
+								<option value="Cameroon">Cameroon</option>
+								<option value="Canada">Canada</option>
+								<option value="Cape Verde">Cape Verde</option>
+								<option value="Cayman Islands">Cayman Islands</option>
+								<option value="Central African Republic">Central African Republic</option>
+								<option value="Chad">Chad</option>
+								<option value="Chile">Chile</option>
+								<option value="China">China</option>
+								<option value="Christmas Island">Christmas Island</option>
+								<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+								<option value="Colombia">Colombia</option>
+								<option value="Comoros">Comoros</option>
+								<option value="Congo">Congo</option>
+								<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+								<option value="Cook Islands">Cook Islands</option>
+								<option value="Costa Rica">Costa Rica</option>
+								<option value="Cote D'ivoire">Cote D'ivoire</option>
+								<option value="Croatia">Croatia</option>
+								<option value="Cuba">Cuba</option>
+								<option value="Cyprus">Cyprus</option>
+								<option value="Czech Republic">Czech Republic</option>
+								<option value="Denmark">Denmark</option>
+								<option value="Djibouti">Djibouti</option>
+								<option value="Dominica">Dominica</option>
+								<option value="Dominican Republic">Dominican Republic</option>
+								<option value="Ecuador">Ecuador</option>
+								<option value="Egypt">Egypt</option>
+								<option value="El Salvador">El Salvador</option>
+								<option value="Equatorial Guinea">Equatorial Guinea</option>
+								<option value="Eritrea">Eritrea</option>
+								<option value="Estonia">Estonia</option>
+								<option value="Ethiopia">Ethiopia</option>
+								<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+								<option value="Faroe Islands">Faroe Islands</option>
+								<option value="Fiji">Fiji</option>
+								<option value="Finland">Finland</option>
+								<option value="France">France</option>
+								<option value="French Guiana">French Guiana</option>
+								<option value="French Polynesia">French Polynesia</option>
+								<option value="French Southern Territories">French Southern Territories</option>
+								<option value="Gabon">Gabon</option>
+								<option value="Gambia">Gambia</option>
+								<option value="Georgia">Georgia</option>
+								<option value="Germany">Germany</option>
+								<option value="Ghana">Ghana</option>
+								<option value="Gibraltar">Gibraltar</option>
+								<option value="Greece">Greece</option>
+								<option value="Greenland">Greenland</option>
+								<option value="Grenada">Grenada</option>
+								<option value="Guadeloupe">Guadeloupe</option>
+								<option value="Guam">Guam</option>
+								<option value="Guatemala">Guatemala</option>
+								<option value="Guinea">Guinea</option>
+								<option value="Guinea-bissau">Guinea-bissau</option>
+								<option value="Guyana">Guyana</option>
+								<option value="Haiti">Haiti</option>
+								<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+								<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+								<option value="Honduras">Honduras</option>
+								<option value="Hong Kong">Hong Kong</option>
+								<option value="Hungary">Hungary</option>
+								<option value="Iceland">Iceland</option>
+								<option value="India">India</option>
+								<option value="Indonesia">Indonesia</option>
+								<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+								<option value="Iraq">Iraq</option>
+								<option value="Ireland">Ireland</option>
+								<option value="Israel">Israel</option>
+								<option value="Italy">Italy</option>
+								<option value="Jamaica">Jamaica</option>
+								<option value="Japan">Japan</option>
+								<option value="Jordan">Jordan</option>
+								<option value="Kazakhstan">Kazakhstan</option>
+								<option value="Kenya">Kenya</option>
+								<option value="Kiribati">Kiribati</option>
+								<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+								<option value="Korea, Republic of">Korea, Republic of</option>
+								<option value="Kuwait">Kuwait</option>
+								<option value="Kyrgyzstan">Kyrgyzstan</option>
+								<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+								<option value="Latvia">Latvia</option>
+								<option value="Lebanon">Lebanon</option>
+								<option value="Lesotho">Lesotho</option>
+								<option value="Liberia">Liberia</option>
+								<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+								<option value="Liechtenstein">Liechtenstein</option>
+								<option value="Lithuania">Lithuania</option>
+								<option value="Luxembourg">Luxembourg</option>
+								<option value="Macao">Macao</option>
+								<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+								<option value="Madagascar">Madagascar</option>
+								<option value="Malawi">Malawi</option>
+								<option value="Malaysia">Malaysia</option>
+								<option value="Maldives">Maldives</option>
+								<option value="Mali">Mali</option>
+								<option value="Malta">Malta</option>
+								<option value="Marshall Islands">Marshall Islands</option>
+								<option value="Martinique">Martinique</option>
+								<option value="Mauritania">Mauritania</option>
+								<option value="Mauritius">Mauritius</option>
+								<option value="Mayotte">Mayotte</option>
+								<option value="Mexico">Mexico</option>
+								<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+								<option value="Moldova, Republic of">Moldova, Republic of</option>
+								<option value="Monaco">Monaco</option>
+								<option value="Mongolia">Mongolia</option>
+								<option value="Montserrat">Montserrat</option>
+								<option value="Morocco">Morocco</option>
+								<option value="Mozambique">Mozambique</option>
+								<option value="Myanmar">Myanmar</option>
+								<option value="Namibia">Namibia</option>
+								<option value="Nauru">Nauru</option>
+								<option value="Nepal">Nepal</option>
+								<option value="Netherlands">Netherlands</option>
+								<option value="Netherlands Antilles">Netherlands Antilles</option>
+								<option value="New Caledonia">New Caledonia</option>
+								<option value="New Zealand">New Zealand</option>
+								<option value="Nicaragua">Nicaragua</option>
+								<option value="Niger">Niger</option>
+								<option value="Nigeria">Nigeria</option>
+								<option value="Niue">Niue</option>
+								<option value="Norfolk Island">Norfolk Island</option>
+								<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+								<option value="Norway">Norway</option>
+								<option value="Oman">Oman</option>
+								<option value="Pakistan">Pakistan</option>
+								<option value="Palau">Palau</option>
+								<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+								<option value="Panama">Panama</option>
+								<option value="Papua New Guinea">Papua New Guinea</option>
+								<option value="Paraguay">Paraguay</option>
+								<option value="Peru">Peru</option>
+								<option value="Philippines">Philippines</option>
+								<option value="Pitcairn">Pitcairn</option>
+								<option value="Poland">Poland</option>
+								<option value="Portugal">Portugal</option>
+								<option value="Puerto Rico">Puerto Rico</option>
+								<option value="Qatar">Qatar</option>
+								<option value="Reunion">Reunion</option>
+								<option value="Romania">Romania</option>
+								<option value="Russian Federation">Russian Federation</option>
+								<option value="Rwanda">Rwanda</option>
+								<option value="Saint Helena">Saint Helena</option>
+								<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+								<option value="Saint Lucia">Saint Lucia</option>
+								<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+								<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+								<option value="Samoa">Samoa</option>
+								<option value="San Marino">San Marino</option>
+								<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+								<option value="Saudi Arabia">Saudi Arabia</option>
+								<option value="Senegal">Senegal</option>
+								<option value="Serbia and Montenegro">Serbia and Montenegro</option>
+								<option value="Seychelles">Seychelles</option>
+								<option value="Sierra Leone">Sierra Leone</option>
+								<option value="Singapore">Singapore</option>
+								<option value="Slovakia">Slovakia</option>
+								<option value="Slovenia">Slovenia</option>
+								<option value="Solomon Islands">Solomon Islands</option>
+								<option value="Somalia">Somalia</option>
+								<option value="South Africa">South Africa</option>
+								<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+								<option value="Spain">Spain</option>
+								<option value="Sri Lanka">Sri Lanka</option>
+								<option value="Sudan">Sudan</option>
+								<option value="Suriname">Suriname</option>
+								<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+								<option value="Swaziland">Swaziland</option>
+								<option value="Sweden">Sweden</option>
+								<option value="Switzerland">Switzerland</option>
+								<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+								<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+								<option value="Tajikistan">Tajikistan</option>
+								<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+								<option value="Thailand">Thailand</option>
+								<option value="Timor-leste">Timor-leste</option>
+								<option value="Togo">Togo</option>
+								<option value="Tokelau">Tokelau</option>
+								<option value="Tonga">Tonga</option>
+								<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+								<option value="Tunisia">Tunisia</option>
+								<option value="Turkey">Turkey</option>
+								<option value="Turkmenistan">Turkmenistan</option>
+								<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+								<option value="Tuvalu">Tuvalu</option>
+								<option value="Uganda">Uganda</option>
+								<option value="Ukraine">Ukraine</option>
+								<option value="United Arab Emirates">United Arab Emirates</option>
+								<option value="United Kingdom">United Kingdom</option>
+								<option value="United States">United States</option>
+								<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+								<option value="Uruguay">Uruguay</option>
+								<option value="Uzbekistan">Uzbekistan</option>
+								<option value="Vanuatu">Vanuatu</option>
+								<option value="Venezuela">Venezuela</option>
+								<option value="Viet Nam">Viet Nam</option>
+								<option value="Virgin Islands, British">Virgin Islands, British</option>
+								<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+								<option value="Wallis and Futuna">Wallis and Futuna</option>
+								<option value="Western Sahara">Western Sahara</option>
+								<option value="Yemen">Yemen</option>
+								<option value="Zambia">Zambia</option>
+								<option value="Zimbabwe">Zimbabwe</li>
+							</select>	
+						</div>
+					</div>
+				</div>
+				      
+			</div>
+			
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">COUNTRY</label>
+							<select class="custom-select" name="country">
+								<option value="United States">United States</option>
+								<option value="United Kingdom">United Kingdom</option>
+								<option value="Afghanistan">Afghanistan</option>
+								<option value="Albania">Albania</option>
+								<option value="Algeria">Algeria</option>
+								<option value="American Samoa">American Samoa</option>
+								<option value="Andorra">Andorra</option>
+								<option value="Angola">Angola</option>
+								<option value="Anguilla">Anguilla</option>
+								<option value="Antarctica">Antarctica</option>
+								<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+								<option value="Argentina">Argentina</option>
+								<option value="Armenia">Armenia</option>
+								<option value="Aruba">Aruba</option>
+								<option value="Australia">Australia</option>
+								<option value="Austria">Austria</option>
+								<option value="Azerbaijan">Azerbaijan</option>
+								<option value="Bahamas">Bahamas</option>
+								<option value="Bahrain">Bahrain</option>
+								<option value="Bangladesh">Bangladesh</option>
+								<option value="Barbados">Barbados</option>
+								<option value="Belarus">Belarus</option>
+								<option value="Belgium">Belgium</option>
+								<option value="Belize">Belize</option>
+								<option value="Benin">Benin</option>
+								<option value="Bermuda">Bermuda</option>
+								<option value="Bhutan">Bhutan</option>
+								<option value="Bolivia">Bolivia</option>
+								<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+								<option value="Botswana">Botswana</option>
+								<option value="Bouvet Island">Bouvet Island</option>
+								<option value="Brazil">Brazil</option>
+								<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+								<option value="Brunei Darussalam">Brunei Darussalam</option>
+								<option value="Bulgaria">Bulgaria</option>
+								<option value="Burkina Faso">Burkina Faso</option>
+								<option value="Burundi">Burundi</option>
+								<option value="Cambodia">Cambodia</option>
+								<option value="Cameroon">Cameroon</option>
+								<option value="Canada">Canada</option>
+								<option value="Cape Verde">Cape Verde</option>
+								<option value="Cayman Islands">Cayman Islands</option>
+								<option value="Central African Republic">Central African Republic</option>
+								<option value="Chad">Chad</option>
+								<option value="Chile">Chile</option>
+								<option value="China">China</option>
+								<option value="Christmas Island">Christmas Island</option>
+								<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+								<option value="Colombia">Colombia</option>
+								<option value="Comoros">Comoros</option>
+								<option value="Congo">Congo</option>
+								<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+								<option value="Cook Islands">Cook Islands</option>
+								<option value="Costa Rica">Costa Rica</option>
+								<option value="Cote D'ivoire">Cote D'ivoire</option>
+								<option value="Croatia">Croatia</option>
+								<option value="Cuba">Cuba</option>
+								<option value="Cyprus">Cyprus</option>
+								<option value="Czech Republic">Czech Republic</option>
+								<option value="Denmark">Denmark</option>
+								<option value="Djibouti">Djibouti</option>
+								<option value="Dominica">Dominica</option>
+								<option value="Dominican Republic">Dominican Republic</option>
+								<option value="Ecuador">Ecuador</option>
+								<option value="Egypt">Egypt</option>
+								<option value="El Salvador">El Salvador</option>
+								<option value="Equatorial Guinea">Equatorial Guinea</option>
+								<option value="Eritrea">Eritrea</option>
+								<option value="Estonia">Estonia</option>
+								<option value="Ethiopia">Ethiopia</option>
+								<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+								<option value="Faroe Islands">Faroe Islands</option>
+								<option value="Fiji">Fiji</option>
+								<option value="Finland">Finland</option>
+								<option value="France">France</option>
+								<option value="French Guiana">French Guiana</option>
+								<option value="French Polynesia">French Polynesia</option>
+								<option value="French Southern Territories">French Southern Territories</option>
+								<option value="Gabon">Gabon</option>
+								<option value="Gambia">Gambia</option>
+								<option value="Georgia">Georgia</option>
+								<option value="Germany">Germany</option>
+								<option value="Ghana">Ghana</option>
+								<option value="Gibraltar">Gibraltar</option>
+								<option value="Greece">Greece</option>
+								<option value="Greenland">Greenland</option>
+								<option value="Grenada">Grenada</option>
+								<option value="Guadeloupe">Guadeloupe</option>
+								<option value="Guam">Guam</option>
+								<option value="Guatemala">Guatemala</option>
+								<option value="Guinea">Guinea</option>
+								<option value="Guinea-bissau">Guinea-bissau</option>
+								<option value="Guyana">Guyana</option>
+								<option value="Haiti">Haiti</option>
+								<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+								<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+								<option value="Honduras">Honduras</option>
+								<option value="Hong Kong">Hong Kong</option>
+								<option value="Hungary">Hungary</option>
+								<option value="Iceland">Iceland</option>
+								<option value="India">India</option>
+								<option value="Indonesia">Indonesia</option>
+								<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+								<option value="Iraq">Iraq</option>
+								<option value="Ireland">Ireland</option>
+								<option value="Israel">Israel</option>
+								<option value="Italy">Italy</option>
+								<option value="Jamaica">Jamaica</option>
+								<option value="Japan">Japan</option>
+								<option value="Jordan">Jordan</option>
+								<option value="Kazakhstan">Kazakhstan</option>
+								<option value="Kenya">Kenya</option>
+								<option value="Kiribati">Kiribati</option>
+								<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+								<option value="Korea, Republic of">Korea, Republic of</option>
+								<option value="Kuwait">Kuwait</option>
+								<option value="Kyrgyzstan">Kyrgyzstan</option>
+								<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+								<option value="Latvia">Latvia</option>
+								<option value="Lebanon">Lebanon</option>
+								<option value="Lesotho">Lesotho</option>
+								<option value="Liberia">Liberia</option>
+								<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+								<option value="Liechtenstein">Liechtenstein</option>
+								<option value="Lithuania">Lithuania</option>
+								<option value="Luxembourg">Luxembourg</option>
+								<option value="Macao">Macao</option>
+								<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+								<option value="Madagascar">Madagascar</option>
+								<option value="Malawi">Malawi</option>
+								<option value="Malaysia">Malaysia</option>
+								<option value="Maldives">Maldives</option>
+								<option value="Mali">Mali</option>
+								<option value="Malta">Malta</option>
+								<option value="Marshall Islands">Marshall Islands</option>
+								<option value="Martinique">Martinique</option>
+								<option value="Mauritania">Mauritania</option>
+								<option value="Mauritius">Mauritius</option>
+								<option value="Mayotte">Mayotte</option>
+								<option value="Mexico">Mexico</option>
+								<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+								<option value="Moldova, Republic of">Moldova, Republic of</option>
+								<option value="Monaco">Monaco</option>
+								<option value="Mongolia">Mongolia</option>
+								<option value="Montserrat">Montserrat</option>
+								<option value="Morocco">Morocco</option>
+								<option value="Mozambique">Mozambique</option>
+								<option value="Myanmar">Myanmar</option>
+								<option value="Namibia">Namibia</option>
+								<option value="Nauru">Nauru</option>
+								<option value="Nepal">Nepal</option>
+								<option value="Netherlands">Netherlands</option>
+								<option value="Netherlands Antilles">Netherlands Antilles</option>
+								<option value="New Caledonia">New Caledonia</option>
+								<option value="New Zealand">New Zealand</option>
+								<option value="Nicaragua">Nicaragua</option>
+								<option value="Niger">Niger</option>
+								<option value="Nigeria">Nigeria</option>
+								<option value="Niue">Niue</option>
+								<option value="Norfolk Island">Norfolk Island</option>
+								<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+								<option value="Norway">Norway</option>
+								<option value="Oman">Oman</option>
+								<option value="Pakistan">Pakistan</option>
+								<option value="Palau">Palau</option>
+								<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+								<option value="Panama">Panama</option>
+								<option value="Papua New Guinea">Papua New Guinea</option>
+								<option value="Paraguay">Paraguay</option>
+								<option value="Peru">Peru</option>
+								<option value="Philippines">Philippines</option>
+								<option value="Pitcairn">Pitcairn</option>
+								<option value="Poland">Poland</option>
+								<option value="Portugal">Portugal</option>
+								<option value="Puerto Rico">Puerto Rico</option>
+								<option value="Qatar">Qatar</option>
+								<option value="Reunion">Reunion</option>
+								<option value="Romania">Romania</option>
+								<option value="Russian Federation">Russian Federation</option>
+								<option value="Rwanda">Rwanda</option>
+								<option value="Saint Helena">Saint Helena</option>
+								<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+								<option value="Saint Lucia">Saint Lucia</option>
+								<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+								<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+								<option value="Samoa">Samoa</option>
+								<option value="San Marino">San Marino</option>
+								<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+								<option value="Saudi Arabia">Saudi Arabia</option>
+								<option value="Senegal">Senegal</option>
+								<option value="Serbia and Montenegro">Serbia and Montenegro</option>
+								<option value="Seychelles">Seychelles</option>
+								<option value="Sierra Leone">Sierra Leone</option>
+								<option value="Singapore">Singapore</option>
+								<option value="Slovakia">Slovakia</option>
+								<option value="Slovenia">Slovenia</option>
+								<option value="Solomon Islands">Solomon Islands</option>
+								<option value="Somalia">Somalia</option>
+								<option value="South Africa">South Africa</option>
+								<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+								<option value="Spain">Spain</option>
+								<option value="Sri Lanka">Sri Lanka</option>
+								<option value="Sudan">Sudan</option>
+								<option value="Suriname">Suriname</option>
+								<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+								<option value="Swaziland">Swaziland</option>
+								<option value="Sweden">Sweden</option>
+								<option value="Switzerland">Switzerland</option>
+								<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+								<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+								<option value="Tajikistan">Tajikistan</option>
+								<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+								<option value="Thailand">Thailand</option>
+								<option value="Timor-leste">Timor-leste</option>
+								<option value="Togo">Togo</option>
+								<option value="Tokelau">Tokelau</option>
+								<option value="Tonga">Tonga</option>
+								<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+								<option value="Tunisia">Tunisia</option>
+								<option value="Turkey">Turkey</option>
+								<option value="Turkmenistan">Turkmenistan</option>
+								<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+								<option value="Tuvalu">Tuvalu</option>
+								<option value="Uganda">Uganda</option>
+								<option value="Ukraine">Ukraine</option>
+								<option value="United Arab Emirates">United Arab Emirates</option>
+								<option value="United Kingdom">United Kingdom</option>
+								<option value="United States">United States</option>
+								<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+								<option value="Uruguay">Uruguay</option>
+								<option value="Uzbekistan">Uzbekistan</option>
+								<option value="Vanuatu">Vanuatu</option>
+								<option value="Venezuela">Venezuela</option>
+								<option value="Viet Nam">Viet Nam</option>
+								<option value="Virgin Islands, British">Virgin Islands, British</option>
+								<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+								<option value="Wallis and Futuna">Wallis and Futuna</option>
+								<option value="Western Sahara">Western Sahara</option>
+								<option value="Yemen">Yemen</option>
+								<option value="Zambia">Zambia</option>
+								<option value="Zimbabwe">Zimbabwe</li>
+							</select>
+				</div>
+				<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">CITY</label>
+							<select class="custom-select" name="city">
+								<option value="Los Angeles">Los Angeles</option>
+								<option value="Washington">Washington</option>
+								<option value="New York">New York</option>
+								<option value="Chicago">Chicago</option>
+							</select>
+				</div>
+				<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">ZIP</label>
+							<input name="phone" id="phone" class="form__input required" type="text" />
+				</div>
+			</div>
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--margin">
+					<label class="form__label">ADRESS *</label>
+					<input name="adress" id="adress" class="form__input required" type="text" />
+				</div>
+			</div>
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--margin">
+					<input type="submit" name="submit" class="button button--submit button--blue-bg" id="submit" value="ADD PATIENT" />	
+				</div>
+			</div>
+			</form>
+
+		</div> <!-- End of Grid -->
+		
+		<div class="grid grid--margin bg-white">
+			<div class="grid__row">
+				<div class="grid__col grid__col--padding">
+					<h3 class="grid__col-title">Medical Information</h3>
+				</div>		
+			</div>
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--37 grid__col--margin">
+							<label class="form__label">KNOWN DISEASES</label>
+							<select class="custom-select" name="kdiseases">
+								<option value="Patient Name">Type 1 Diabetes</option>
+								<option value="Patient Name">Multiple Sclerosis</option>
+								<option value="Patient Name">Rheumatoid Arthritis</option>
+								<option value="Patient Name">Allergies & Asthma</option>
+								<option value="Patient Name">Celiac Disease</option>
+								<option value="Patient Name">Cancer</option>
+								<option value="Patient Name">Catarrh</option>
+								<option value="Patient Name">Conjunctivitis</option>
+								<option value="Patient Name">Liver Disease</option>
+								<option value="Patient Name">Heart Disease</option>
+								<option value="Patient Name">Epilepsy </option>
+								<option value="Patient Name">Flatulence </option>
+								<option value="Patient Name">Gastroenteritis</option>
+							</select>
+				</div>
+				<div class="grid__col grid__col--37 grid__col--margin">
+							<label class="form__label">PERIOD</label>
+							<input type="text" name="dates" class="form__input" value="" />
+				</div>
+			</div>
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--37 grid__col--margin">
+							<label class="form__label">FAMILY HISTORY</label>
+							<select class="custom-select" name="kdiseases2">
+								<option value="Patient Name">Mother</option>
+								<option value="Patient Name">Father</option>
+								<option value="Patient Name">Brother</option>
+								<option value="Patient Name">Sister</option>
+							</select>
+				</div>
+				<div class="grid__col grid__col--37 grid__col--margin">
+							<label class="form__label">DISEASES</label>
+							<select class="custom-select" name="kdiseases2">
+								<option value="Patient Name">Type 1 Diabetes</option>
+								<option value="Patient Name">Multiple Sclerosis</option>
+								<option value="Patient Name">Rheumatoid Arthritis</option>
+								<option value="Patient Name">Allergies & Asthma</option>
+								<option value="Patient Name">Celiac Disease</option>
+								<option value="Patient Name">Cancer</option>
+								<option value="Patient Name">Catarrh</option>
+								<option value="Patient Name">Conjunctivitis</option>
+								<option value="Patient Name">Liver Disease</option>
+								<option value="Patient Name">Heart Disease</option>
+								<option value="Patient Name">Epilepsy </option>
+								<option value="Patient Name">Flatulence </option>
+								<option value="Patient Name">Gastroenteritis</option>
+							</select>
+				</div>
+			</div>
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--margin">
+					<label class="form__label">NOTES *</label>
+					<input name="adress" id="notes" class="form__input required" type="text" />
+				</div>
+			</div>
+			<div class="grid__row grid__row--margin">
+				<div class="grid__col grid__col--margin">
+					<input type="submit" name="submit" class="button button--submit button--blue-bg" id="submit" value="SAVE" />					
+				</div>
+			</div>
+		</div> <!-- End of Grid -->
+
+
+
+	</div>
+	
+</div> <!-- Wrap end -->
+
+<div class="section section-panel" id="panel">
+	<div class="panel-resize"></div>
+	<div class="section-panel__content scrollbar-macosx">
+		
+
+		<div class="grid">
+			
+		        <div class="grid__row">	
+				<div class="grid__col grid__col--padding">
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Settings Panel</h3>
+						</div>		
+					</div>
+					<div class="grid__row align-c">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label pb0">ENABLED OPTION</label>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<div class="form__switcher">
+								<label class="switch">
+								<input class="switch__input" type="checkbox" data-role="none" checked />
+								<span class="switch__label" data-on="On" data-off="Off"></span> <span class="switch__handle"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="grid__row align-c">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label pb0">DISABLED OPTION</label>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<div class="form__switcher">
+								<label class="switch">
+								<input class="switch__input" type="checkbox" data-role="none"/>
+								<span class="switch__label" data-on="On" data-off="Off"></span> <span class="switch__handle"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="grid__row align-c">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label pb0">ENABLED OPTION</label>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<div class="form__switcher">
+								<label class="switch">
+								<input class="switch__input" type="checkbox" data-role="none" checked />
+								<span class="switch__label" data-on="On" data-off="Off"></span> <span class="switch__handle"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="grid__row align-c">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label pb0">DISABLED OPTION</label>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<div class="form__switcher">
+								<label class="switch">
+								<input class="switch__input" type="checkbox" data-role="none"/>
+								<span class="switch__label" data-on="On" data-off="Off"></span> <span class="switch__handle"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Custom radios</h3>
+						</div>		
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">CUSTOM RADIO SETTINGS</label>
+							<div class="form__radio">
+								<input type="radio" name="cr" id="cr1" value="1" checked /><label for="cr1">Radio option</label>
+							</div>
+							<div class="form__radio">
+								<input type="radio" name="cr" id="cr2" value="2" /><label for="cr2">Radio option</label>
+							</div>
+							<div class="form__radio">
+								<input type="radio" name="cr" id="cr3" value="3" /><label for="cr3">Radio option</label>
+							</div>
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Custom checkboxes</h3>
+						</div>		
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">CUSTOM CHECKBOX SETTINGS</label>
+							<div class="form__checkbox">
+								<input type="checkbox" name="cc1" id="cc1" value="1" checked /><label for="cc1">Checkbox option</label>
+							</div>
+							<div class="form__checkbox">
+								<input type="checkbox" name="cc2" id="cc2" value="2" /><label for="cc2">Checkbox option</label>
+							</div>
+							<div class="form__checkbox">
+								<input type="checkbox" name="cc3" id="cc3" value="3" /><label for="cc3">Checkbox option</label>
+							</div>
+						</div>
+					</div>
+					
+
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Custom Slider</h3>
+						</div>		
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin">
+							<label class="form__label">CUSTOM SINGLE SLIDER</label>
+								<input type="text" class="js-slider" name="my_range" value="" />
+						</div>
+					</div>
+					<div class="grid__row">
+						<div class="grid__col grid__col--margin mb0">
+							<label class="form__label">CUSTOM RANGE SLIDER</label>
+								<input type="text" class="js-range-slider" name="my_range" value="" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div> <!-- End of Grid -->	
+	</div>
+</div>  <!-- End of right panel -->
+
+ <!-- Modal - Appointment --> 
+<div class="modal modal--appointment">
+		
+		<div class="modal__overlay modal__overlay--toggle"></div>
+		<div class="modal__wrapper modal-transition">
+		  
+		<div class="modal__body">
+			<div class="modal__header">
+				<h2 class="modal__header-title">Make an appointment</h2>
+				<div class="modal__close modal__overlay--toggle"><span></span></div>
+			</div>
+			<div class="modal__content">					
+		
+				<div class="grid">
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Patient Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">PATIENT NAME</label>
+							<select class="custom-select" name="appname">
+								<option value="Patient Name">Emma Williams</option>
+								<option value="Patient Name">Olivia Johnson</option>
+								<option value="Patient Name">Ava Jones</option>
+								<option value="Patient Name">Isabella Brown</option>
+								<option value="Patient Name">Sophia Davis</option>
+								<option value="Patient Name">Mia Latin</option>
+								<option value="Patient Name">Amelia Miller</option>
+								<option value="Patient Name">Charlotte Wilson</option>
+								<option value="Patient Name">Abigail Moore</option>
+								<option value="Patient Name">Emily Anderson</option>
+								<option value="Patient Name">Harper Thomas</option>
+								<option value="Patient Name">Evelyn Jackson</option>
+								<option value="Patient Name">Madison Taylor</option>
+								<option value="Patient Name">Victoria White</option>
+								<option value="Patient Name">Sofia Harris</option>
+								<option value="Patient Name">Scarlett Martin</option>
+								<option value="Patient Name">Aria Thompson</option>
+								<option value="Patient Name">Elizabeth Robinson</option>
+								<option value="Patient Name">Camila Lewis</option>
+								<option value="Patient Name">Layla Garcia</option>
+								<option value="Patient Name">Ella Walker</option>
+								<option value="Patient Name">Chloe Clark</option>
+								<option value="Patient Name">Zoey Rodriguez</option>
+								<option value="Patient Name">Penelope Martinez</option>
+								<option value="Patient Name">Matthew Jones</option>
+								<option value="Patient Name">Benjamin Brown</option>
+								<option value="Patient Name">Alexander Davies</option>
+								<option value="Patient Name">William Evans</option>
+								<option value="Patient Name">Daniel Smith</option>
+								<option value="Patient Name">Jayden Taylor</option>
+								<option value="Patient Name">Oliver Thomas</option>
+								<option value="Patient Name">Carter Roberts</option>
+								<option value="Patient Name">Sebastian Walker</option>
+								<option value="Patient Name">Joseph Johnson</option>
+								<option value="Patient Name">David Thompson</option>
+								<option value="Patient Name">Gabriel Wood</option>
+								<option value="Patient Name">Julian Robinson</option>
+								<option value="Patient Name">Jackson Wright</option>
+								<option value="Patient Name">Anthony King</option>
+								<option value="Patient Name">Dylan Cooper</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">DATE OR BIRTH</label>
+									<input type="text" name="birthday" class="form__input" value="02/03/1983" />
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">PHONE</label>
+									<input type="text" name="appphone" class="form__input" value="" />
+						</div>
+					</div>
+					<div class="grid__row  grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Appointment Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label">LOCATION</label>
+							<select class="custom-select" name="applocation">
+								<option value="Los Angeles">H Clinic, Houston Street</option>
+								<option value="Washington">Hostpital Washington</option>
+								<option value="New York">Clinic 54 New York</option>
+								<option value="Chicago">43V Room Chicago</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+									<label class="form__label">DATE &amp; TIME</label>
+									<input type="text" name="timepicker" class="form__input" value="" />
+						</div>
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Examination Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">EXAMINATION TYPE</label>
+							<select class="custom-select" name="apptype">
+								<option value="Examination">Abdominal radiology</option>
+								<option value="Examination">Breast imaging</option>
+								<option value="Examination">Cardiothoracic radiology</option>
+								<option value="Examination">Cardiovascular radiology</option>
+								<option value="Examination">Chest radiology</option>
+								<option value="Examination">Emergency radiology</option>
+								<option value="Examination">Endovascular surgical neuroradiology</option>
+								<option value="Examination">Gastrointestinal radiology</option>
+								<option value="Examination">Genitourinary radiology</option>
+								<option value="Examination">Head and neck radiology</option>
+								<option value="Examination">Interventional radiology</option>
+								<option value="Examination">Musculoskeletal radiology</option>
+								<option value="Examination">Neuroradiology</option>
+								<option value="Examination">Nuclear radiology</option>
+								<option value="Examination">Pediatric radiology</option>
+								<option value="Examination">Radiation oncology</option>
+								<option value="Examination">Vascular and interventional radiology</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">DOCTOR</label>
+									<select class="custom-select" name="apptype">
+										<option value="Patient Name">Dr. Alexander Davies</option>
+										<option value="Patient Name">Dr. William Evans</option>
+										<option value="Patient Name">Dr. Daniel Smith</option>
+										<option value="Patient Name">Dr. Jayden Taylor</option>
+										<option value="Patient Name">Dr. Oliver Thomas</option>
+										<option value="Patient Name">Dr. Carter Roberts</option>
+										<option value="Patient Name">Dr. Sebastian Walker</option>
+										<option value="Patient Name">Dr. Joseph Johnson</option>
+										<option value="Patient Name">Dr. David Thompson</option>
+										<option value="Patient Name">Dr. Gabriel Wood</option>
+										<option value="Patient Name">Dr. Julian Robinson</option>
+									</select>
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">NOTES</label>
+									<input name="notes" id="notes" class="form__input" type="text" />
+						</div>
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<input type="submit" name="submit" class="button button--submit button--blue-bg" id="submit" value="ADD APPOINTMENT" />	
+						</div>
+					</div>
+				</div> <!-- End of Grid -->
+
+			</div> 
+
+			
+		</div>
+
+		</div>
+ </div> 
+ 
+  <!-- Modal - prescription --> 
+<div class="modal modal--prescription">
+		
+		<div class="modal__overlay modal__overlay--toggle"></div>
+		<div class="modal__wrapper modal-transition">
+		  
+		<div class="modal__body">
+			<div class="modal__header">
+				<h2 class="modal__header-title">Make a prescription</h2>
+				<div class="modal__close modal__overlay--toggle"><span></span></div>
+			</div>
+			<div class="modal__content">					
+		
+				<div class="grid">
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Patient Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">PATIENT NAME</label>
+							<select class="custom-select" name="appname">
+								<option value="Patient Name">Emma Williams</option>
+								<option value="Patient Name">Olivia Johnson</option>
+								<option value="Patient Name">Ava Jones</option>
+								<option value="Patient Name">Isabella Brown</option>
+								<option value="Patient Name">Sophia Davis</option>
+								<option value="Patient Name">Mia Latin</option>
+								<option value="Patient Name">Amelia Miller</option>
+								<option value="Patient Name">Charlotte Wilson</option>
+								<option value="Patient Name">Abigail Moore</option>
+								<option value="Patient Name">Emily Anderson</option>
+								<option value="Patient Name">Harper Thomas</option>
+								<option value="Patient Name">Evelyn Jackson</option>
+								<option value="Patient Name">Madison Taylor</option>
+								<option value="Patient Name">Victoria White</option>
+								<option value="Patient Name">Sofia Harris</option>
+								<option value="Patient Name">Scarlett Martin</option>
+								<option value="Patient Name">Aria Thompson</option>
+								<option value="Patient Name">Elizabeth Robinson</option>
+								<option value="Patient Name">Camila Lewis</option>
+								<option value="Patient Name">Layla Garcia</option>
+								<option value="Patient Name">Ella Walker</option>
+								<option value="Patient Name">Chloe Clark</option>
+								<option value="Patient Name">Zoey Rodriguez</option>
+								<option value="Patient Name">Penelope Martinez</option>
+								<option value="Patient Name">Matthew Jones</option>
+								<option value="Patient Name">Benjamin Brown</option>
+								<option value="Patient Name">Alexander Davies</option>
+								<option value="Patient Name">William Evans</option>
+								<option value="Patient Name">Daniel Smith</option>
+								<option value="Patient Name">Jayden Taylor</option>
+								<option value="Patient Name">Oliver Thomas</option>
+								<option value="Patient Name">Carter Roberts</option>
+								<option value="Patient Name">Sebastian Walker</option>
+								<option value="Patient Name">Joseph Johnson</option>
+								<option value="Patient Name">David Thompson</option>
+								<option value="Patient Name">Gabriel Wood</option>
+								<option value="Patient Name">Julian Robinson</option>
+								<option value="Patient Name">Jackson Wright</option>
+								<option value="Patient Name">Anthony King</option>
+								<option value="Patient Name">Dylan Cooper</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">DATE OR BIRTH</label>
+									<input type="text" name="birthday" class="form__input" value="02/03/1983" />
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">PHONE</label>
+									<input type="text" name="appphone" class="form__input" value="" />
+						</div>
+					</div>
+					<div class="grid__row  grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Prescription Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label">MEDICATION</label>
+							<select class="custom-select" name="applocation">
+									<option value="Acetaminophen">Acetaminophen</option>
+									<option value="Adderall">Adderall</option>
+									<option value="Alprazolam">Alprazolam</option>
+									<option value="Amitriptyline">Amitriptyline</option>
+									<option value="Amlodipine">Amlodipine</option>
+									<option value="Amoxicillin">Amoxicillin</option>
+									<option value="Ativan">Ativan</option>
+									<option value="Atorvastatin">Atorvastatin</option>
+									<option value="Azithromycin">Azithromycin</option>
+									<option value="Ciprofloxacin">Ciprofloxacin</option>
+									<option value="Citalopram">Citalopram</option>
+									<option value="Clindamycin">Clindamycin</option>
+									<option value="Clonazepam">Clonazepam</option>
+									<option value="Codeine">Codeine</option>
+									<option value="Cyclobenzaprine">Cyclobenzaprine</option>
+									<option value="Cymbalta">Cymbalta</option>
+									<option value="Doxycycline">Doxycycline</option>
+									<option value="Gabapentin">Gabapentin</option>
+									<option value="Hydrochlorothiazide">Hydrochlorothiazide</option>
+									<option value="Ibuprofen">Ibuprofen</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+									<label class="form__label">PERIOD FOR MEDICATION</label>
+									<input type="text" name="dates" class="form__input" value="" />
+						</div>
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Doctor Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">DOCTOR</label>
+									<select class="custom-select" name="apptype">
+										<option value="Patient Name">Dr. Alexander Davies</option>
+										<option value="Patient Name">Dr. William Evans</option>
+										<option value="Patient Name">Dr. Daniel Smith</option>
+										<option value="Patient Name">Dr. Jayden Taylor</option>
+										<option value="Patient Name">Dr. Oliver Thomas</option>
+										<option value="Patient Name">Dr. Carter Roberts</option>
+										<option value="Patient Name">Dr. Sebastian Walker</option>
+										<option value="Patient Name">Dr. Joseph Johnson</option>
+										<option value="Patient Name">Dr. David Thompson</option>
+										<option value="Patient Name">Dr. Gabriel Wood</option>
+										<option value="Patient Name">Dr. Julian Robinson</option>
+									</select>
+						</div>
+						<div class="grid__col grid__col--23 grid__col--margin">
+									<label class="form__label">NOTES</label>
+									<input name="notes" id="notes" class="form__input" type="text" />
+						</div>
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<input type="submit" name="submit" class="button button--submit button--inline button--blue-bg" id="submit" value="SAVE PRESCRIPTION" />
+							<input type="submit" name="submit" class="button button--submit button--inline button--blue-bg" id="submit" value="SAVE &amp; PRINT" />								
+						</div>
+					</div>
+				</div> <!-- End of Grid -->
+
+			</div> 
+
+			
+		</div>
+
+		</div>
+ </div> 
+ 
+ 
+   <!-- Modal - reports --> 
+<div class="modal modal--reports">
+		
+		<div class="modal__overlay modal__overlay--toggle"></div>
+		<div class="modal__wrapper modal-transition">
+		  
+		<div class="modal__body">
+			<div class="modal__header">
+				<h2 class="modal__header-title">Generate report</h2>
+				<div class="modal__close modal__overlay--toggle"><span></span></div>
+			</div>
+			<div class="modal__content">					
+		
+				<div class="grid">
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Patient Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--13 grid__col--margin">
+							<label class="form__label">PATIENT NAME</label>
+							<select class="custom-select" name="appname">
+								<option value="Patient Name">Emma Williams</option>
+								<option value="Patient Name">Olivia Johnson</option>
+								<option value="Patient Name">Ava Jones</option>
+								<option value="Patient Name">Isabella Brown</option>
+								<option value="Patient Name">Sophia Davis</option>
+								<option value="Patient Name">Mia Latin</option>
+								<option value="Patient Name">Amelia Miller</option>
+								<option value="Patient Name">Charlotte Wilson</option>
+								<option value="Patient Name">Abigail Moore</option>
+								<option value="Patient Name">Emily Anderson</option>
+								<option value="Patient Name">Harper Thomas</option>
+								<option value="Patient Name">Evelyn Jackson</option>
+								<option value="Patient Name">Madison Taylor</option>
+								<option value="Patient Name">Victoria White</option>
+								<option value="Patient Name">Sofia Harris</option>
+								<option value="Patient Name">Scarlett Martin</option>
+								<option value="Patient Name">Aria Thompson</option>
+								<option value="Patient Name">Elizabeth Robinson</option>
+								<option value="Patient Name">Camila Lewis</option>
+								<option value="Patient Name">Layla Garcia</option>
+								<option value="Patient Name">Ella Walker</option>
+								<option value="Patient Name">Chloe Clark</option>
+								<option value="Patient Name">Zoey Rodriguez</option>
+								<option value="Patient Name">Penelope Martinez</option>
+								<option value="Patient Name">Matthew Jones</option>
+								<option value="Patient Name">Benjamin Brown</option>
+								<option value="Patient Name">Alexander Davies</option>
+								<option value="Patient Name">William Evans</option>
+								<option value="Patient Name">Daniel Smith</option>
+								<option value="Patient Name">Jayden Taylor</option>
+								<option value="Patient Name">Oliver Thomas</option>
+								<option value="Patient Name">Carter Roberts</option>
+								<option value="Patient Name">Sebastian Walker</option>
+								<option value="Patient Name">Joseph Johnson</option>
+								<option value="Patient Name">David Thompson</option>
+								<option value="Patient Name">Gabriel Wood</option>
+								<option value="Patient Name">Julian Robinson</option>
+								<option value="Patient Name">Jackson Wright</option>
+								<option value="Patient Name">Anthony King</option>
+								<option value="Patient Name">Dylan Cooper</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">DATE OR BIRTH</label>
+									<input type="text" name="birthday" class="form__input" value="02/03/1983" />
+						</div>
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">PHONE</label>
+									<input type="text" name="appphone" class="form__input" value="" />
+						</div>
+					</div>
+					<div class="grid__row  grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Report Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--12 grid__col--margin">
+							<label class="form__label">REPORT TYPE</label>
+							<select class="custom-select" name="applocation">
+									<option value="Diseases">Diseases report</option>
+									<option value="Activity">Activity report</option>
+							</select>
+						</div>
+						<div class="grid__col grid__col--12 grid__col--margin">
+									<label class="form__label">REPORT PERIOD</label>
+									<input type="text" name="dates" class="form__input" value="" />
+						</div>
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<h3 class="grid__col-title">Doctor Information</h3>
+						</div>		
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--13 grid__col--margin">
+									<label class="form__label">Generated by Doctor</label>
+									<select class="custom-select" name="apptype">
+										<option value="Patient Name">Dr. Alexander Davies</option>
+										<option value="Patient Name">Dr. William Evans</option>
+										<option value="Patient Name">Dr. Daniel Smith</option>
+										<option value="Patient Name">Dr. Jayden Taylor</option>
+										<option value="Patient Name">Dr. Oliver Thomas</option>
+										<option value="Patient Name">Dr. Carter Roberts</option>
+										<option value="Patient Name">Dr. Sebastian Walker</option>
+										<option value="Patient Name">Dr. Joseph Johnson</option>
+										<option value="Patient Name">Dr. David Thompson</option>
+										<option value="Patient Name">Dr. Gabriel Wood</option>
+										<option value="Patient Name">Dr. Julian Robinson</option>
+									</select>
+						</div>
+						<div class="grid__col grid__col--23 grid__col--margin">
+									<label class="form__label">NOTES</label>
+									<input name="notes" id="notes" class="form__input" type="text" />
+						</div>
+					</div>
+					<div class="grid__row grid__row--margin">
+						<div class="grid__col grid__col--margin">
+							<input type="submit" name="submit" class="button button--submit button--blue-bg" id="submit" value="GENERATE REPORT" />							
+						</div>
+					</div>
+				</div> <!-- End of Grid -->
+
+			</div> 
+
+			
+		</div>
+
+		</div>
+ </div> 
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/dropzone.js"></script>
+<script src="js/daterangepicker.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/jquery.dashboard-custom.js"></script>
+</body>
+
+<!-- Mirrored from smarttemplates.net/medikit/dashboard__patients-add.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2019 00:52:40 GMT -->
+</html>
